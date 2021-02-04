@@ -68,6 +68,7 @@ import { removeTrailingSlash } from '../lib/url';
       screen,
       language,
       cache: useCache && sessionStorage.getItem(key),
+      username: JSON.parse(localStorage.getItem("userInfo")).userName,
     };
 
     if (params) {

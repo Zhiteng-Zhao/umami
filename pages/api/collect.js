@@ -29,13 +29,13 @@ export default async (req, res) => {
   } = req;
 
   if (type === 'pageview') {
-    const { url, referrer } = payload;
+    const { url, referrer , username} = payload;
 
-    await savePageView(website_id, session_id, url, referrer);
+    await savePageView(website_id, session_id, url, referrer, username);
   } else if (type === 'event') {
-    const { url, event_type, event_value } = payload;
+    const { url, event_type, event_value, username } = payload;
 
-    await saveEvent(website_id, session_id, url, event_type, event_value);
+    await saveEvent(website_id, session_id, url, event_type, event_value, username);
   } else {
     return badRequest(res);
   }
