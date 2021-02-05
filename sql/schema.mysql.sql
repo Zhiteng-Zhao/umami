@@ -46,6 +46,7 @@ create table pageview (
     created_at timestamp default current_timestamp,
     url varchar(500) not null,
     referrer varchar(500),
+    username varchar(40),
     foreign key (website_id) references website(website_id) on delete cascade,
     foreign key (session_id) references session(session_id) on delete cascade
 ) ENGINE=InnoDB COLLATE=utf8_general_ci;
@@ -58,6 +59,7 @@ create table event (
     url varchar(500) not null,
     event_type varchar(50) not null,
     event_value varchar(50) not null,
+    username varchar(40),
     foreign key (website_id) references website(website_id) on delete cascade,
     foreign key (session_id) references session(session_id) on delete cascade
 ) ENGINE=InnoDB COLLATE=utf8_general_ci;

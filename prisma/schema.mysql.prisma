@@ -25,6 +25,7 @@ model event {
   url         String
   event_type  String
   event_value String
+  username    String
   session     session   @relation(fields: [session_id], references: [session_id])
   website     website   @relation(fields: [website_id], references: [website_id])
 
@@ -40,6 +41,7 @@ model pageview {
   created_at DateTime? @default(now())
   url        String
   referrer   String?
+  username   String
   session    session   @relation(fields: [session_id], references: [session_id])
   website    website   @relation(fields: [website_id], references: [website_id])
 
