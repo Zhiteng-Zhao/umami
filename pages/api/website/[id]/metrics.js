@@ -57,7 +57,7 @@ export default async (req, res) => {
         {
           domain: type !== 'event' && domain,
           url: type !== 'url' && url,
-          username: username !== 'undefined' && username,
+          username: username !== undefined && username,
         },
       );
 
