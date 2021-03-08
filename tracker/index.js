@@ -71,6 +71,9 @@ import { removeTrailingSlash } from '../lib/url';
       username: localStorage.getItem('userInfo')
         ? JSON.parse(localStorage.getItem('userInfo')).userName
         : 'anonymous ',
+      syscode: localStorage.getItem('userInfo')
+        ? JSON.parse(localStorage.getItem('userInfo')).sysCode
+        : '',
     };
 
     if (params) {

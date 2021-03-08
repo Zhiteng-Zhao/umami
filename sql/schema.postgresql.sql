@@ -44,7 +44,8 @@ create table pageview (
     created_at timestamp with time zone default current_timestamp,
     url varchar(500) not null,
     referrer varchar(500),
-    username varchar(40)
+    username varchar(40),
+    syscode  varchar(40),
 );
 
 create table event (
@@ -55,7 +56,8 @@ create table event (
     url varchar(500) not null,
     event_type varchar(50) not null,
     event_value varchar(50) not null,
-    username varchar(40)
+    username varchar(40),
+    syscode  varchar(40)
 );
 
 create index website_user_id_idx on website(user_id);
