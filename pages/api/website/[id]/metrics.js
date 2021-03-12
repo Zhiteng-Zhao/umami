@@ -29,7 +29,7 @@ export default async (req, res) => {
     if (!(await allowQuery(req))) {
       return unauthorized(res);
     }
-    const { id, type, start_at, end_at, domain, url, username } = req.query;
+    const { id, type, start_at, end_at, domain, url, username, syscode } = req.query;
 
     if (domain && !DOMAIN_REGEX.test(domain)) {
       return badRequest(res);
@@ -67,6 +67,7 @@ export default async (req, res) => {
           domain,
           url: type !== 'url' && url,
           username: username !== undefined && username,
+          syscode: syscode !== undefined && syscode,
         },
       );
 
