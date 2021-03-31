@@ -72,7 +72,7 @@ import { removeTrailingSlash } from '../lib/url';
         ? JSON.parse(localStorage.getItem('userInfo')).userName
         : 'anonymous ',
       syscode: localStorage.getItem('userInfo')
-        ? JSON.parse(localStorage.getItem('userInfo')).sysCode
+        ? JSON.parse(localStorage.getItem('userInfo')).note
         : '',
     };
 
